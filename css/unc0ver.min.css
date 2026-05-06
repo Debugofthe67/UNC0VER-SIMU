@@ -1,0 +1,628 @@
+/*!
+ * Start Bootstrap - Grayscale v5.0.8 (https://startbootstrap.com/template-overviews/grayscale)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
+ */
+
+@font-face {
+    font-family: Chocolate;
+    src: url(../fonts/painting-with-chocolate.regular-webfont.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal
+}
+
+html {
+    scroll-behavior: smooth;
+    --tint-color: #017AFF;
+    --semi-bold: 600
+}
+
+* {
+    font-family: -apple-system-font, BlinkMacSystemFont, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif
+}
+
+a {
+    color: var(--tint-color);
+    text-decoration: none;
+    cursor: pointer
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto
+}
+
+body {
+    max-width: 100vw;
+    margin: 0;
+    background-color: var(--bg-color)
+}
+
+h1 {
+    margin-top: 100px;
+    margin-bottom: 50px
+}
+
+#footer {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--light-text-color)
+}
+
+.viewMoreGlobal {
+    color: var(--light-text-color);
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: opacity .15s ease;
+    -webkit-transition: opacity .15s ease;
+    -moz-transition: opacity .15s ease;
+    -o-transition: opacity .15s ease;
+    -ms-transition: opacity .15s ease
+}
+
+.viewMoreGlobal:hover {
+    opacity: .65
+}
+
+.expandable {
+    pointer-events: none;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity .15s ease, max-height .35s ease;
+    -webkit-transition: opacity .15s ease, max-height .35s ease;
+    -moz-transition: opacity .15s ease, max-height .35s ease;
+    -o-transition: opacity .15s ease, max-height .35s ease;
+    -ms-transition: opacity .15s ease, max-height .35s ease
+}
+
+.expandable * {
+    pointer-events: none
+}
+
+.expandable.expanded {
+    pointer-events: inherit;
+    opacity: 1;
+    max-height: 1000px
+}
+
+.expandable.expanded * {
+    pointer-events: inherit
+}
+
+#navbar {
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: fixed;
+    color: var(--text-color);
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: color .25s ease, background-color .25s ease;
+    -webkit-transition: color .25s ease, background-color .25s ease;
+    -moz-transition: color .25s ease, background-color .25s ease;
+    -o-transition: color .25s ease, background-color .25s ease;
+    -ms-transition: color .25s ease, background-color .25s ease
+}
+
+#navbar .right {
+    text-shadow: 10px 10px 15px rgb(0 0 0 / .55), -10px -10px 15px rgb(0 0 0 / .25)
+}
+
+#navbar .right:hover {
+    text-shadow: 10px 10px 15px #000, -10px -10px 15px #000;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+#navbar #navbarName {
+    text-shadow: 10px 10px 15px rgb(0 0 0 / .15), -10px -10px 15px rgb(0 0 0 / .25)
+}
+
+#navbar #navbarName:hover {
+    text-shadow: 10px 10px 15px rgb(0 0 0 / .5), -10px -10px 15px rgb(0 0 0 / .5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+#navbar .right,
+#navbar a {
+    color: var(--nav-font-color)
+}
+
+#navbar * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.navBarMode {
+    color: var(--nav-font-color) !important;
+    background-color: var(--nav-color)
+}
+
+.navBarMode #navbarName,
+.navBarMode .right {
+    text-shadow: none !important
+}
+
+.navBarMode #navbarName:hover,
+.navBarMode .right:hover {
+    -webkit-transform: none !important;
+    transform: none !important;
+    color: var(--tint-color) !important;
+    border-bottom: solid 4px var(--tint-color)
+}
+
+.navBarMode svg:hover path {
+    fill: var(--tint-color)
+}
+
+#navInner {
+    padding-right: 60px;
+    position: relative;
+    min-height: 80px;
+    max-height: 80px;
+    line-height: 76px;
+    max-width: 1000px;
+    width: calc(100% - 10px);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto
+}
+
+#navInner * {
+    padding-left: 25px;
+    padding-right: 25px
+}
+
+#navInner .right {
+    float: right;
+    cursor: pointer
+}
+
+#navInner #navbarName {
+    cursor: pointer;
+    line-height: 80px;
+    font-family: Chocolate;
+    font-size: 34pt;
+    font-weight: 100
+}
+
+#navInner svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(calc(-50% - 2px));
+    transform: translateY(calc(-50% - 2px))
+}
+
+@media only screen and (max-width:900px) {
+    #navInner {
+        padding-right: 60px !important
+    }
+    #navInner * {
+        padding-left: 5px !important;
+        padding-right: 5px !important
+    }
+    #navInner svg {
+        right: 10px !important;
+        padding-left: 0 !important;
+        padding-right: 5px !important
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #navInner {
+        padding-right: 40px !important
+    }
+    #navInner svg {
+        right: 3px !important;
+        padding-right: 0 !important
+    }
+}
+
+.backgroundMountain {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-filter: brightness(var(--bg-brightness-lighter));
+    filter: brightness(var(--bg-brightness-lighter));
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    min-height: 90vh;
+    background-image: url(../img/bggg.webp)
+}
+
+#blurredMountain {
+    z-index: -2;
+    filter: blur(10px) brightness(var(--bg-brightness));
+    -webkit-filter: blur(10px) brightness(var(--bg-brightness));
+    min-width: 100%
+}
+
+.mainContent {
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 30vh;
+    margin-left: auto;
+    margin-right: auto
+}
+
+h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16pt
+}
+
+#privacyHeader {
+    margin: 10
+}
+
+.privacyContent {
+    padding-bottom: 35pt
+}
+
+#uncoverCenterTitle {
+    font-family: Chocolate;
+    font-weight: 100;
+    font-size: 90pt;
+    margin: 0
+}
+
+@media only screen and (max-width:900px) {
+    #uncoverCenterTitle {
+        font-size: 60pt
+    }
+}
+
+#timer {
+    margin: 0;
+    font-weight: 700;
+    font-size: 24pt
+}
+
+#etaCounter {
+    margin: 10px 0
+}
+
+.button {
+    cursor: pointer;
+    color: #fff;
+    font-weight: var(--semi-bold);
+    margin: 30px auto;
+    border-radius: 100px;
+    padding: 20px;
+    background-color: var(--tint-color);
+    max-width: 150px;
+    transition: padding .15s ease;
+    -webkit-transition: padding .15s ease;
+    -moz-transition: padding .15s ease;
+    -o-transition: padding .15s ease;
+    -ms-transition: padding .15s ease
+}
+
+.button:hover {
+    padding-left: 35px;
+    padding-right: 35px
+}
+
+.button.secondaryButton {
+    max-width: 350px;
+    padding: 8px 20px;
+    background-color: var(--progress-bar-color);
+    margin: 8px auto
+}
+
+#altStoreSection {
+    margin: 40px auto
+}
+
+#altStoreSection span {
+    opacity: .65
+}
+
+#altDownloadURL {
+    color: var(--text-color);
+    margin-bottom: 40px;
+    margin-top: 0
+}
+
+#installLink {
+    color: var(--text-color);
+    margin-bottom: 40px;
+    margin-top: 0
+}
+
+#payLinks {
+    padding-bottom: 20px
+}
+
+#payLinks a {
+    padding-right: 30px
+}
+
+#payLinks a:last-of-type {
+    padding-right: 0
+}
+
+#changelogText * {
+    padding: 0;
+    margin: 0
+}
+
+#changelogText li {
+    list-style-position: inside
+}
+
+#progress {
+    border-radius: 100px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--progress-bar-color);
+    margin: 60px auto;
+    margin-top: 15px
+}
+
+#progressBar {
+    font-weight: 600;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 8pt;
+    width: 100%;
+    height: calc(8pt + 5px);
+    padding-right: 8px;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    background-color: var(--tint-color);
+    -webkit-transition: -webkit-transform 1.15s ease;
+    transition: -webkit-transform 1.15s ease;
+    transition: transform 1.15s ease;
+    transition: transform 1.15s ease, -webkit-transform 1.15s ease;
+    -webkit-transition: transform 1.15s ease;
+    -moz-transition: transform 1.15s ease;
+    -o-transition: transform 1.15s ease;
+    -ms-transition: transform 1.15s ease;
+    transition-delay: .5s;
+    -webkit-transition-delay: .5s;
+    -moz-transition-delay: .5s;
+    -o-transition-delay: .5s
+}
+
+.hidden {
+    opacity: 0
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.fadeInElement {
+    -webkit-animation: fadeIn .8s;
+    animation: fadeIn .8s
+}
+
+@-webkit-keyframes expandOut {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        color: #fff0;
+        padding-left: 80px;
+        padding-right: 80px
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes expandOut {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        color: #fff0;
+        padding-left: 80px;
+        padding-right: 80px
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.expandOutElement {
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation: expandOut 1.6s;
+    animation: expandOut 1.6s
+}
+
+#detailedInfo {
+    width: 100%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative
+}
+
+#detailedInfo .aboutJailbreak,
+#detailedInfo .betaIpsw {
+    padding-bottom: 60pt;
+    padding-top: 160pt
+}
+
+#detailedInfo .aboutJailbreak h1,
+#detailedInfo .betaIpsw h1 {
+    font-size: 20pt;
+    margin: 0;
+    margin-bottom: 20px
+}
+
+#detailedInfo .aboutJailbreak p,
+#detailedInfo .betaIpsw p {
+    opacity: .65
+}
+
+#detailedInfo .featureWrapper {
+    display: inline-block;
+    text-align: center;
+    padding: 30px 10px;
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position: center 10px;
+    width: calc(33.33% - 10px);
+    min-width: 300px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+#detailedInfo .featureWrapper h1 {
+    font-size: 20pt;
+    margin: 0;
+    margin-bottom: 20px
+}
+
+#detailedInfo .featureWrapper p {
+    opacity: .65
+}
+
+#detailedInfo .featureWrapper svg {
+    margin-bottom: 20px
+}
+
+#detailedInfo .featureWrapper svg * {
+    fill: var(--text-color)
+}
+
+#detailedInfo .featureWrapper svg#lock * {
+    stroke: var(--text-color);
+    fill: none;
+    stroke-width: 32
+}
+
+#detailedInfo .featureWrapper svg#lock * .lockInner {
+    fill: var(--text-color) !important;
+    stroke-width: 10 !important
+}
+
+html {
+    --bg-color: #f8f9fa;
+    --border-color: rgba(0, 0, 0, .075);
+    --progress-bar-color: rgba(0, 0, 0, .15);
+    --nav-color: white;
+    --nav-font-color: black;
+    --text-color: rgb(0, 0, 0);
+    --light-text-color: rgba(0, 0, 0, .65);
+    --bg-brightness-lighter: 280%;
+    --bg-brightness: 110%;
+    --filter: 1
+}
+
+.darkMode {
+    --bg-color: #161616;
+    --border-color: rgba(255, 255, 255, .075);
+    --progress-bar-color: rgba(255, 255, 255, .15);
+    --nav-color: #1e1e1e;
+    --nav-font-color: white;
+    --text-color: rgb(255, 255, 255);
+    --light-text-color: rgba(255, 255, 255, .65);
+    --bg-brightness-lighter: 40%;
+    --bg-brightness: 25%;
+    --filter: 0
+}
+
+#importantInfo h2 {
+    margin: 5px auto
+}
+
+#importantInfo p {
+    opacity: .65
+}
+
+.installInfo {
+    display: none
+}
+
+.installInfo h1 {
+    font-size: 16pt !important;
+    margin: 20px auto !important
+}
+
+.installInfo ol {
+    max-width: 600px;
+    margin: 0 auto
+}
+
+.installInfo li {
+    text-align: left
+}
+
+#testedDevicesList {
+    display: none
+}
+
+#testedDevicesList table {
+    font-weight: 400;
+    width: 320px;
+    margin: 10px auto;
+    border-spacing: 0
+}
+
+#testedDevicesList table tr {
+    width: 100%;
+    margin: 30px
+}
+
+#testedDevicesList table tr th {
+    border-bottom: solid;
+    border-color: var(--progress-bar-color);
+    border-width: 2px;
+    padding: 8px
+}
+
+#testedDevicesList table tr th:first-of-type {
+    text-align: left
+}
+
+#testedDevicesList table tr th:last-of-type {
+    text-align: right
+}
